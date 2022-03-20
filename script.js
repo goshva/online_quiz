@@ -1,4 +1,6 @@
 const questionText = document.getElementById("question-text");
+const questionImg = document.getElementById("question-img");
+
 const optionBox = document.querySelector(".option-box");
 const currentQuestionNum = document.querySelector(".current-question-num");
 const answerDescription = document.querySelector(".answer-description");
@@ -24,63 +26,59 @@ let myArray = [];
 let interval;
 
 const myApp = [{
-    question: "What is the browser's internal representation of your web page?",
-    options: ["Document Object Model", "Domain Object Model", "Document Observation Model", "Domestic Object Model"],
-    answer: 0,
-    description: "Document Object Model (DOM) is the browser's internal representation of your web page.",
-}, {
-    question: "Web pages are written in?",
-    options: ["FTP", "HTML", "HTTP", "URL"],
+    question: "Помоги рыцарю выйти из пещеры. Выбери правильный ответ",
+    img: "olip1",
+    options: ["1", "2", "3", "не понял"],
     answer: 1,
-    description: "Web pages are written in HTML.",
+    description: "-> -> ^ ^ ",
 }, {
-    question: "You can get the value of an element's attributes using ...... method.",
-    options: ["setAttribute method", "getElementById method", "getAttribute method", "All of above"],
+    question: "Выбери правильную программу для рыцаря?",
+    img: "olip2",
+    options: ["1", "2", "3", "не понял"],
+    answer: 2,
+    description: "3",
+}, {
+    question: "Рыцарю нужно посадить деревья. Какая программа в блоке памяти верная?",
+    img: "olip3",
+    options: ["1", "2", "3", "не понял"],
     answer: 2,
     description: "You can get the value of an element's attributes using getAttribute method",
 }, {
-    question: "What property holds the text content, as well as all nested HTML content, of an element?",
-    options: ["innerContent", "innerHTML", "innerWidth", "innerHeight"],
-    answer: 1,
-    description: "The answer is innerHTML.",
-}, {
-    question: "The document.getElementById method grabs an element from the DOM using its ......?",
-    options: ["Class name", "Attribute", "Id", "Object"],
+    question: "Где окажется рыцарь когда выполнит программу?",
+    img: "olip4",
+    options: ["1", "2", "3", "не понял"],
     answer: 2,
-    description: "The answer is Id.",
+    description: "Ответ 2: Фиолетовый флажок ",
 }, {
-    question: "You can set the value of an element's attributes using ...... method?",
-    options: ["setAttribute method", "getElementById method", "getAttribute method", "All of above"],
+    question: "Сколько в выделеной обоасти числовых змеек?",
+    img: "olip5",
+    options: ["10", "9", "8", "не понял"],
+    answer: 2,
+    description: "Ответ: 10.",
+}, {
+    question: "Выбери программу в которой после запуска проекта кот вслух раскажет правила игры",
+    img: "olip6",
+    options: ["1", "2", "3", "не понял"],
+    answer: 2,
+    description: "3",
+}, {
+    question: "Сколько в выделеной обоасти числовых змеек?",
+    img: "vp1",
+    options: ["10", "9", "8", "не понял"],
     answer: 0,
-    description: "You can set the value of an element's attributes using setAttribute method",
-}, {
-    question: "You can use the window object's ....... property to set an event handler, or callback, function for the load event.",
-    options: ["onload", "load", "addEventListener", "querySelector"],
-    answer: 0,
-    description: "The onload property allows us to set an event handler or callback function for the load event.",
-}, {
-    question: "A ........ is a function expression that has no name.",
-    options: ["anonymous function", "function declaration", "function name", "function reference"],
-    answer: 0,
-    description: "Anonymous function is a function expression that has no name.",
-}, {
-    question: "...... are functions defined inside another function.",
-    options: ["Internal functions", "Multiple functions", "Function home", "Nested functions"],
-    answer: 3,
-    description: "Nested functions are functions defined inside antoehr function.",
-}, {
-    question: "The ...... object is always at the top of the DOM tree.",
-    options: ["head", "body", "HTML", "document"],
-    answer: 3,
-    description: "Document is always at the tope of the DOM tree.",
-}]
+    description: "10",
+}
+]
 
 
 function load() {
     //console.log("test");
     number++;
     questionText.innerHTML = myApp[questionIndex].question;
-    createOptions();
+    imgsrc = "./img/"+myApp[questionIndex].img+".png";
+    quizBox.style.backgroundImage = `url('${imgsrc}')`;
+    console.log(imgsrc);
+    createOptions()
     scoreBoard();
     currentQuestionNum.innerHTML = number + " / " + myApp.length;
 }

@@ -57,6 +57,9 @@ body {
 .quiz-box {
     background-color: white;
     display: none;
+    background-image: url(img/olip1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .quiz-box.show {
@@ -122,7 +125,7 @@ body {
 .quiz-box .question-box{
     background-color: rgb(240, 213, 245);
     padding: 40px 30px;
-    margin-top: 40px;
+    margin-top: 100%;
     border-radius: 10px;
     border: 2px solid black;
     text-align: center;
